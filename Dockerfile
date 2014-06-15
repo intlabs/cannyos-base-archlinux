@@ -25,7 +25,6 @@ MAINTAINER "Pete Birley (petebirley@gmail.com)"
 
 # Set environment variables.
 ENV HOME /root
-ENV DEBIAN_FRONTEND noninteractive
 ENV DISTRO arch
 
 # Install base utilities.
@@ -37,9 +36,6 @@ RUN chmod -R +x /root/scripts/*
 
 #Create normal user
 RUN curl -s https://raw.githubusercontent.com/intlabs/cannyos-utils/master/base-containers/add-user/adduser.sh | bash
-
-# Set the working directory
-WORKDIR /
 
 #Add startup & post-install script
 ADD CannyOS /CannyOS
