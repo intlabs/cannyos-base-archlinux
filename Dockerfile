@@ -19,7 +19,7 @@
 #
 
 # Pull base image.
-FROM docker pull base/archlinux
+FROM base/archlinux
 
 MAINTAINER "Pete Birley (petebirley@gmail.com)"
 
