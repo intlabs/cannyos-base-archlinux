@@ -1,5 +1,5 @@
 #
-# CannyOS Ubuntu 14.04 lts base container
+# CannyOS Arch Linux base container
 #
 # https://github.com/intlabs/cannyos-base-archlinux
 #
@@ -24,21 +24,22 @@ FROM base/archlinux
 MAINTAINER "Pete Birley (petebirley@gmail.com)"
 
 # Install base utilities.
-RUN sed 's/^CheckSpace/#CheckSpace/g' -i /etc/pacman.conf
-RUN pacman -Syyu --noconfirm 
+RUN curl -s https://raw.githubusercontent.com/intlabs/cannyos-utils/master/base-containers/packages/packages-10.sh | bash
 
+#Add files for root user.
+ADD root /root
+RUN chmod -R +x /root/scripts/*
 
-# Add new user
-RUN useradd -m -s /bin/bash user
-RUN echo 'user:acoman' | chpasswd
+#Create normal user
+RUN curl -s https://raw.githubusercontent.com/intlabs/cannyos-utils/master/base-containers/add-user/adduser.sh | bash
 
+# Set the working directory
+WORKDIR /
 
 #Add startup & post-install script
-ADD /CannyOS/startup.sh /CannyOS/startup.sh
-RUN chmod +x /CannyOS/startup.sh
-#ADD /CannyOS/post-install.sh /CannyOS/post-install.sh
-#RUN chmod +x /CannyOS/post-install.sh
-ADD /CannyOS/CannyOS.splash /CannyOS/CannyOS.splash
+ADD CannyOS /CannyOS
+WORKDIR /CannyOS
+RUN chmod +x *.sh
 
 # Define mountable directories.
 VOLUME ["/data"]
