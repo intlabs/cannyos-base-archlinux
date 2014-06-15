@@ -37,7 +37,7 @@ rm -f "/CannyOS/Host/done"
 
 # Put content of script here
 
-
+bash
 
 echo ""
 cat /CannyOS/CannyOS.splash
