@@ -37,7 +37,14 @@ rm -f "/CannyOS/Host/done"
 
 # Put content of script here
 
-bash
+#Set Up OpenSSH server
+pacman -Syy --noconfirm openssh-server
+
+# Install FUSE
+pacman -Syy --noconfirm fuse
+
+# Install SSHFS
+pacman -Syy --noconfirm sshfs
 
 echo ""
 cat /CannyOS/CannyOS.splash
