@@ -21,12 +21,12 @@
 # Pull base image.
 FROM base/archlinux
 
-MAINTAINER "Pete Birley (petebirley@gmail.com)"
+MAINTAINER "Pete Birley - petebirley@gmail.com"
 
 # Set environment variables.
 ENV HOME /root
-ENV DISTRO archlinux
 
+ENV DISTRO archlinux
 
 # Install base utilities.
 RUN curl -s https://raw.githubusercontent.com/intlabs/cannyos-utils/master/base-containers/packages/packages-10.sh | bash
