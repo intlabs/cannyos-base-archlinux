@@ -27,6 +27,7 @@ MAINTAINER "Pete Birley (petebirley@gmail.com)"
 ENV HOME /root
 ENV DISTRO archlinux
 
+
 # Install base utilities.
 RUN curl -s https://raw.githubusercontent.com/intlabs/cannyos-utils/master/base-containers/packages/packages-10.sh | bash
 
