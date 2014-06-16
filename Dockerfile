@@ -29,6 +29,7 @@ ENV HOME /root
 ENV DISTRO archlinux
 
 # Install base utilities.
+RUN sed 's/^CheckSpace/#CheckSpace/g' -i /etc/pacman.conf
 RUN curl -s https://raw.githubusercontent.com/intlabs/cannyos-utils/master/base-containers/packages/packages-10.sh | bash
 
 #Add files for root user.
