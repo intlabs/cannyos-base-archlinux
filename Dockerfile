@@ -25,7 +25,6 @@ MAINTAINER "Pete Birley - petebirley@gmail.com"
 
 # Set environment variables.
 ENV HOME /root
-
 ENV DISTRO archlinux
 
 # Install base utilities.
