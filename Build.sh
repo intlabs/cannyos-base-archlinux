@@ -41,7 +41,7 @@ echo ""
 sudo docker rmi intlabs/cannyos-base-archlinux
 
 # Build base container image
-sudo docker build -no-cache -t="intlabs/cannyos-base-archlinux" github.com/intlabs/cannyos-base-archlinux
+sudo docker build --no-cache -t="intlabs/cannyos-base-archlinux" github.com/intlabs/cannyos-base-archlinux
 
 echo ""
 echo "*****************************************************"
